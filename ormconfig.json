@@ -1,0 +1,32 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "petcms",
+  "password": "petcms",
+  "database": "petcms",
+  "synchronize": false,
+  "dropSchema": false,
+  "keepConnectionAlive": true,
+  "logging": true,
+  "entities": [
+    "C:\\Users\\Константин\\PhpstormProjects\\PET-CMS\\backend\\src\\database/../**/*.entity{.ts,.js}"
+  ],
+  "migrations": [
+    "C:\\Users\\Константин\\PhpstormProjects\\PET-CMS\\backend\\src\\database/migrations/**/*{.ts,.js}"
+  ],
+  "seeds": [
+    "C:\\Users\\Константин\\PhpstormProjects\\PET-CMS\\backend\\src\\database/seeds/**/*{.ts,.js}"
+  ],
+  "factories": [
+    "C:\\Users\\Константин\\PhpstormProjects\\PET-CMS\\backend\\src\\database/factories/**/*{.ts,.js}"
+  ],
+  "cli": {
+    "entitiesDir": "src",
+    "migrationsDir": "src/database/migrations",
+    "subscribersDir": "subscriber"
+  },
+  "extra": {
+    "max": 100
+  }
+}
