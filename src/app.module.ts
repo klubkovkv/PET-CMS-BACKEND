@@ -19,6 +19,7 @@ import { TagModule } from '@app/modules/tag/tag.module';
     }),
     // UserModule,
     TagModule,
+    UserModule,
   ],
 })
 export class AppModule {}
