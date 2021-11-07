@@ -1,7 +1,6 @@
 import { AbstractDto } from '@app/common/dto/abstract.dto';
 
-export class CreateUserDto extends AbstractDto {
-  readonly username: string;
+export class UserDto extends AbstractDto {
   readonly email: string;
   readonly password: string;
 }

@@ -17,6 +17,9 @@ async function bootstrap() {
   app.enableVersioning({
     type: VersioningType.URI,
   });
+
+  app.useGlobalPipes(new ValidationPipe());
+
   await app.listen(configService.get('app.port'));
 }
 
