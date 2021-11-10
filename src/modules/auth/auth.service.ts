@@ -6,8 +6,8 @@ import { UtilsProvider } from '@app/providers/utils.provider';
 import type { UserDto } from '@app/modules/user/dto/user.dto';
 import type { UserEntity } from '@app/modules/user/user.entity';
 import { UserService } from '@app/modules/user/user.service';
-import { TokenPayloadDto } from './dto/TokenPayloadDto';
-import type { UserLoginDto } from './dto/UserLoginDto';
+import { TokenPayloadDto } from './dto/TokenPayload.dto';
+import type { UserLoginDto } from './dto/UserLogin.dto';
 import { ConfigService } from '@nestjs/config';
 
 @Injectable()
@@ -25,7 +25,7 @@ export class AuthService {
     });
   }
 
-  async validateUser(userLoginDto: UserLoginDto) {
+  async validateUser(userLoginDto: UserLoginDto): Promise<UserEntity> {
     const user = await this.userService.findOne({
       email: userLoginDto.email,
     });

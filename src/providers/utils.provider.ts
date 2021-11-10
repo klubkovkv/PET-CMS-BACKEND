@@ -28,8 +28,6 @@ export class UtilsProvider {
    * @returns {Promise<boolean>}
    */
   static validateHash(password: string, hash: string): Promise<boolean> {
-    console.log('password', password, 'hash', hash);
-
     if (!password || !hash) {
       return Promise.resolve(false);
     }

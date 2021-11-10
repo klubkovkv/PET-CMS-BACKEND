@@ -17,7 +17,7 @@ import { AuthService } from '@app/modules/auth/auth.service';
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => {
         return {
-          secretOrPrivateKey: configService.get('auth.secret'),
+          secret: configService.get('auth.secret'),
           signOptions: {
             expiresIn: configService.get('auth.expires'),
           },

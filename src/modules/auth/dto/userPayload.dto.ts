@@ -1,7 +1,7 @@
 import { UserDto } from '@app/modules/user/dto/user.dto';
-import { TokenPayloadDto } from './TokenPayloadDto';
+import { TokenPayloadDto } from './TokenPayload.dto';
 
-export class LoginPayloadDto {
+export class UserPayloadDto {
   user: UserDto;
   token: TokenPayloadDto;
 

@@ -8,6 +8,7 @@ import { TypeOrmConfigService } from '@app/database/typeorm-config.service';
 import { AuthModule } from './modules/auth/auth.module';
 import { UserModule } from '@app/modules/user/user.module';
 import { TagModule } from '@app/modules/tag/tag.module';
+import { PageModule } from '@app/modules/page/page.module';
 
 @Module({
   imports: [
@@ -20,8 +21,9 @@ import { TagModule } from '@app/modules/tag/tag.module';
       useClass: TypeOrmConfigService,
     }),
     AuthModule,
-    TagModule,
     UserModule,
+    TagModule,
+    PageModule,
   ],
 })
 export class AppModule {}
