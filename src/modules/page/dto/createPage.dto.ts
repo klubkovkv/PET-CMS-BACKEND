@@ -1,5 +1,6 @@
 import { AbstractDto } from '@app/common/dto/abstract.dto';
 import { IsNotEmpty } from 'class-validator';
+import { PageMetaInterface } from '@app/modules/page/types/pageMeta.interface';
 
 export class CreatePageDto extends AbstractDto {
   @IsNotEmpty()
@@ -14,6 +15,8 @@ export class CreatePageDto extends AbstractDto {
   @IsNotEmpty()
   readonly status: boolean;
 
-  @IsNotEmpty()
   readonly text: string;
+
+  @IsNotEmpty()
+  readonly pageMeta: PageMetaInterface;
 }
