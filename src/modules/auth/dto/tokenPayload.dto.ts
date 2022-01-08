@@ -1,9 +1,11 @@
 export class TokenPayloadDto {
-  expiresIn: number;
+  refreshToken: string;
   accessToken: string;
+  type: string;
 
-  constructor(data: { expiresIn: number; accessToken: string }) {
-    this.expiresIn = data.expiresIn;
+  constructor(data: TokenPayloadDto) {
+    this.refreshToken = data.refreshToken;
     this.accessToken = data.accessToken;
+    this.type = data.type;
   }
 }

@@ -18,10 +18,17 @@ export class AuthService {
     public readonly userService: UserService,
   ) {}
 
-  async createToken(user: UserEntity | UserDto): Promise<TokenPayloadDto> {
+  async createTokens(user: UserEntity | UserDto): Promise<TokenPayloadDto> {
     return new TokenPayloadDto({
-      expiresIn: this.configService.get('auth.expires'),
-      accessToken: await this.jwtService.signAsync({ id: user.id }),
+      accessToken: await this.jwtService.signAsync(
+        { id: user.id },
+        { expiresIn: this.configService.get('auth.accessExpires') },
+      ),
+      refreshToken: await this.jwtService.signAsync(
+        { id: user.id },
+        { expiresIn: this.configService.get('auth.refreshExpires') },
+      ),
+      type: 'Bearer',
     });
   }
 

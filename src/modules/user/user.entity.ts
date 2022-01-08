@@ -13,6 +13,12 @@ export class UserEntity extends AbstractEntity {
   @Exclude({ toPlainOnly: true })
   password: string;
 
+  @Column({
+    nullable: true,
+  })
+  @Exclude({ toPlainOnly: true })
+  currentHashedRefreshToken?: string;
+
   @BeforeInsert()
   async hashPassword() {
     this.password = await hash(this.password, 10);
